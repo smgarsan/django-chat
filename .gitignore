@@ -25,7 +25,6 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-venv/
 
 # PyInstaller
 dist/
@@ -100,4 +99,4 @@ out/
 local_settings.py
 
 # Git
-*.orig
+*.origvenv
