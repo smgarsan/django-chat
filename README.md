@@ -1,1 +1,1 @@
-# chat-backend
+# django-chat
