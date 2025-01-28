@@ -13,12 +13,13 @@ SECRET_KEY = "django-insecure-=!j^#ih+rgl3a$a()3gnr9m7yxky3!pssfoky+lbr$sx@3v!n3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost"]
+ALLOWED_HOSTS = ["*"]
 
 
 INSTALLED_APPS = [
     "daphne",
     "rest_framework",
+    'rest_framework_simplejwt',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -27,6 +28,15 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "chat",
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
